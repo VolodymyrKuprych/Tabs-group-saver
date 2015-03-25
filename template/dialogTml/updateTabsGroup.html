@@ -1,0 +1,9 @@
+<div class="dialog-contents">
+    <h3 class="mb10">Updating tabs group</h3>
+    <p>Choose method of update</p>
+    <label for="new">new</label><input id="new" type="radio" ng-model="updateType" value="new">
+    <label for="append">append</label><input id="append" type="radio" ng-model="updateType" value="append"><div class="mb10"></div>
+
+    <a class="button p5 plr10 cancel" ng-click="closeThisDialog()">Cancel</a>
+    <a class="button p5 plr10" ng-click="update();closeThisDialog()">Update</a>
+</div>

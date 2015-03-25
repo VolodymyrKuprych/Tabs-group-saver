@@ -1,0 +1,17 @@
+<div id="tabsGroupDetail" layout-vertical full>
+    <div class="header" shrink0 layout-horizontal>
+        <a title="go back" ng-click="goBack()"><i class="icon-left"></i></a>
+        <p data-title stretch>Tabs group: <span class="regular">{{tabsGroup.title}} <a ng-click="editTabsGroupTitle()" class="button" data-edit-title><i class="icon-pencil"></i></a></span></p>
+    </div>
+    <div shrink0 data-search><input type="text" placeholder="Search..." ng-model="search"></div>
+    <div id="content" stretch>
+        <div class="tab" ng-repeat="tab in tabsGroup.tabs | filter:search">
+            <div><img ng-src="{{tab.favIconUrl}}"></div>
+            <div>
+                <p data-title>{{tab.title}}</p>
+                <p><a data-url ng-click="openTab(tab)">{{tab.url}}</a></p>
+            </div>
+            <div><a ng-click="removeTab(tab.id)"><i class="icon-cancel"></i></a></div>
+        </div>
+    </div>
+</div>

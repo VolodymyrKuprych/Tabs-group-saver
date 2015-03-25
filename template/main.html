@@ -1,0 +1,32 @@
+<div id="main" layout-vertical full>
+    <div class="header-main" shrink0>
+        <p data-title>Tabs group saver</p>
+        <a class="button" ng-click="go2config()"><i class="icon-cog"></i></a>
+        <div>
+            <input type="text" ng-model="search.title" placeholder="{{placeholder}}">
+        </div>
+    </div>
+    <div id="content" stretch>
+        <div class="tabsGroup" ng-repeat="tabsGroup in tabsGroups | tabsGroupsSearch:search.title">
+            <div>
+                <p data-title>{{tabsGroup.title}}</p>
+                <div data-tabs>
+                    <div ng-repeat="tab in tabsGroup.tabs">
+                        <a title="{{tab.title}}" ng-click="openTab(tab)">
+                            <img ng-src="{{tab.favIconUrl}}" >
+                        </a>
+                    </div>
+                    <a ng-click="go2tabsGroupDetail(tabsGroup.id)">detail</a>
+                </div>
+            </div>
+            <div>
+                <a ng-click="openAllTabs(tabsGroup.tabs)" title="Open all tabs"><i class="icon-eye"></i></a>
+                <a ng-click="go2tabsGroupDetail(tabsGroup.id)" title="Edit tabs group"><i class="icon-pencil"></i></a>
+                <a ng-click="removeTabsGroup(tabsGroup.id)" title="RemoveTabsGroup"><i class="icon-cancel"></i></a>
+            </div>
+        </div>
+    </div>
+    <div shrink0 layout-horizontal id="controls">
+        <a stretch class="button" ng-click="createTabsGroup()">Create tabs group</a>
+    </div>
+</div>

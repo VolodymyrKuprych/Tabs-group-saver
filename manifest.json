@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Tabs Group Saver",
+    "version":"0.8.9",
+    "permissions": [
+        "tabs",
+        "browsingData",
+        "unlimitedStorage"
+    ],
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "icons": {
+        "16": "icons/Typicons_e075(0)_16.png",
+        "48": "icons/Typicons_e075(0)_48.png"
+    }
+}
